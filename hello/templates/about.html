@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us - KD Ice Cream{% endblock title %}
+
+{% block body %}
+<!-- Hero -->
+<section class="bg-primary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">About KD Ice Cream</h1>
+    <p class="lead">Crafting happiness, one scoop at a time since 2015</p>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="{% static 'p1.jpg' %}" class="img-fluid rounded shadow" alt="Our Story">
+      </div>
+      <div class="col-md-6">
+        <h2>Our Story</h2>
+        <p>KD Ice Cream started as a small family-owned shop in the heart of Hyderabad. What began as a passion for creating the perfect scoop has grown into a beloved brand known for quality, creativity, and pure joy.</p>
+        <p>We believe that every scoop tells a story — from the carefully sourced ingredients to the smiles on our customers' faces. Our commitment to freshness and flavour is what sets us apart.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Meet Our Team</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <i class="bi bi-person-circle fs-1 text-primary"></i>
+            <h5 class="card-title mt-3">Kuldeep Ram</h5>
+            <p class="text-muted">Founder & Head Chef</p>
+            <p>Passionate about ice cream since childhood, Kuldeep founded KD Ice Cream with a dream to bring artisanal flavors to everyone.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <i class="bi bi-person-circle fs-1 text-success"></i>
+            <h5 class="card-title mt-3">Gajendra</h5>
+            <p class="text-muted">Operations Manager</p>
+            <p>Gajendra ensures every order is perfect and every customer leaves with a smile. She manages our day-to-day operations.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <i class="bi bi-person-circle fs-1 text-danger"></i>
+            <h5 class="card-title mt-3">Sandeep</h5>
+            <p class="text-muted">Flavor Innovator</p>
+            <p>Sandeep is the creative genius behind our unique flavors. He's always experimenting with new combinations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Journey Timeline -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Journey</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <h3 class="text-primary">2015</h3>
+          <p>Opened our first shop in Hyderabad with just 5 flavors and a big dream.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <h3 class="text-primary">2018</h3>
+          <p>Expanded to 3 locations and introduced our signature Family Packs.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <h3 class="text-primary">2022</h3>
+          <p>Launched online ordering and home delivery across the city.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <h3 class="text-primary">2026</h3>
+          <p>Serving 50,000+ happy customers with 20+ unique flavors!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="bg-dark text-white py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-3 mb-3">
+        <h2 class="fw-bold">50K+</h2>
+        <p>Happy Customers</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h2 class="fw-bold">20+</h2>
+        <p>Unique Flavors</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h2 class="fw-bold">5</h2>
+        <p>Store Locations</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h2 class="fw-bold">10+</h2>
+        <p>Years of Experience</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}

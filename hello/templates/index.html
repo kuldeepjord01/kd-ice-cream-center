@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home - KD Ice Cream{% endblock title %}
+
+{% block extra_css %}
+<style>
+  .carousel-item img { max-height: 500px; object-fit: cover; }
+  .card-img-top { object-fit: cover; }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- Hero Carousel -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'p2.png' %}" class="d-block w-100" alt="Ice Cream Banner 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to KD Ice Cream</h5>
+        <p>Discover our wide range of delicious flavors.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'p1.jpg' %}" class="d-block w-100" alt="Ice Cream Banner 2">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Made Fresh Daily</h5>
+        <p>Premium ingredients for the perfect scoop.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'p3.jpg' %}" class="d-block w-100" alt="Ice Cream Banner 3">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Family Packs Available</h5>
+        <p>Share the joy with your loved ones.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Popular Flavors Section -->
+<div class="container py-5">
+  <h2 class="text-center mb-4"><i class="bi bi-stars"></i> Our Popular Flavors</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <!-- Chocolate Card -->
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <img src="{% static 'Chocolate.jpg' %}" class="card-img-top" height="225" alt="Chocolate Ice Cream">
+        <div class="card-body">
+          <h5 class="card-title">Chocolate</h5>
+          <p class="card-text">
+            Rich and indulgent chocolate ice cream made from premium cocoa — a timeless classic loved by all.
+          </p>
+          <p class="fw-bold text-primary mb-2"><i class="bi bi-tag"></i> ₹80 per scoop</p>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalChocolate">
+              <i class="bi bi-eye"></i> View
+            </button>
+            <form method="post" action="{% url 'order' %}" style="display:inline">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Chocolate">
+              <button type="submit" class="btn btn-sm btn-primary">
+                <i class="bi bi-cart-plus"></i> Order
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strawberry Card -->
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <img src="{% static 'strawberry.jpg' %}" class="card-img-top" height="225" alt="Strawberry Ice Cream">
+        <div class="card-body">
+          <h5 class="card-title">Strawberry</h5>
+          <p class="card-text">
+            A delightful blend of sweet and tart, made with real strawberries for a refreshing summer treat.
+          </p>
+          <p class="fw-bold text-primary mb-2"><i class="bi bi-tag"></i> ₹90 per scoop</p>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalStrawberry">
+              <i class="bi bi-eye"></i> View
+            </button>
+            <form method="post" action="{% url 'order' %}" style="display:inline">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Strawberry">
+              <button type="submit" class="btn btn-sm btn-primary">
+                <i class="bi bi-cart-plus"></i> Order
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Butterscotch Card -->
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <img src="{% static 'butterscoth.jpg' %}" class="card-img-top" height="225" alt="Butterscotch Ice Cream">
+        <div class="card-body">
+          <h5 class="card-title">Butterscotch</h5>
+          <p class="card-text">
+            Creamy butterscotch with rich caramelized butter and brown sugar — a nostalgic favourite.
+          </p>
+          <p class="fw-bold text-primary mb-2"><i class="bi bi-tag"></i> ₹85 per scoop</p>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalButterscotch">
+              <i class="bi bi-eye"></i> View
+            </button>
+            <form method="post" action="{% url 'order' %}" style="display:inline">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Butterscotch">
+              <button type="submit" class="btn btn-sm btn-primary">
+                <i class="bi bi-cart-plus"></i> Order
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Why Choose Us -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Why Choose KD Ice Cream?</h2>
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <i class="bi bi-award fs-1 text-primary"></i>
+        <h5 class="mt-2">Premium Quality</h5>
+        <p class="text-muted">Made with the finest ingredients sourced locally.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-truck fs-1 text-primary"></i>
+        <h5 class="mt-2">Fast Delivery</h5>
+        <p class="text-muted">Get your favourite flavors delivered to your doorstep.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-heart fs-1 text-primary"></i>
+        <h5 class="mt-2">Made with Love</h5>
+        <p class="text-muted">Every scoop is crafted with passion and care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View Modals -->
+<!-- Chocolate Modal -->
+<div class="modal fade" id="modalChocolate" tabindex="-1" aria-labelledby="modalChocolateLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="modalChocolateLabel"><i class="bi bi-snow2"></i> Chocolate Ice Cream</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{% static 'Chocolate.jpg' %}" class="img-fluid rounded" alt="Chocolate">
+          </div>
+          <div class="col-md-6">
+            <h4>Chocolate</h4>
+            <p class="text-muted">A universal favourite, cherished for its rich and indulgent taste. Made from premium cocoa powder and melted chocolate, offering a deep, satisfying flavour that appeals to chocolate lovers worldwide.</p>
+            <ul class="list-unstyled">
+              <li><strong>Price:</strong> ₹80 per scoop</li>
+              <li><strong>Available in:</strong> Cone, Cup, Sundae</li>
+              <li><strong>Allergens:</strong> Milk, Soy</li>
+            </ul>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Chocolate">
+              <button type="submit" class="btn btn-primary"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Strawberry Modal -->
+<div class="modal fade" id="modalStrawberry" tabindex="-1" aria-labelledby="modalStrawberryLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="modalStrawberryLabel"><i class="bi bi-snow2"></i> Strawberry Ice Cream</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{% static 'strawberry.jpg' %}" class="img-fluid rounded" alt="Strawberry">
+          </div>
+          <div class="col-md-6">
+            <h4>Strawberry</h4>
+            <p class="text-muted">A delightful blend of sweet and tart, made with real strawberries. Its vibrant pink colour and refreshing taste make it a popular choice, especially during summer.</p>
+            <ul class="list-unstyled">
+              <li><strong>Price:</strong> ₹90 per scoop</li>
+              <li><strong>Available in:</strong> Cone, Cup, Milkshake</li>
+              <li><strong>Allergens:</strong> Milk</li>
+            </ul>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Strawberry">
+              <button type="submit" class="btn btn-danger"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Butterscotch Modal -->
+<div class="modal fade" id="modalButterscotch" tabindex="-1" aria-labelledby="modalButterscotchLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title" id="modalButterscotchLabel"><i class="bi bi-snow2"></i> Butterscotch Ice Cream</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{% static 'butterscoth.jpg' %}" class="img-fluid rounded" alt="Butterscotch">
+          </div>
+          <div class="col-md-6">
+            <h4>Butterscotch</h4>
+            <p class="text-muted">Combines the rich flavours of butter and brown sugar, creating a creamy and slightly caramelized treat. Often enjoyed with a caramel sauce drizzle or crunchy toffee bits for added texture.</p>
+            <ul class="list-unstyled">
+              <li><strong>Price:</strong> ₹85 per scoop</li>
+              <li><strong>Available in:</strong> Cone, Cup, Sundae</li>
+              <li><strong>Allergens:</strong> Milk, Nuts</li>
+            </ul>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Butterscotch">
+              <button type="submit" class="btn btn-warning"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

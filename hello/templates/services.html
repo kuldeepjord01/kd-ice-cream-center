@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Services - KD Ice Cream{% endblock title %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="bg-warning text-dark text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Our Services</h1>
+    <p class="lead">Delicious treats for every occasion — explore what we offer!</p>
+  </div>
+</section>
+
+<!-- Ice Cream Section -->
+<section id="icecream" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4"><i class="bi bi-snow2"></i> Ice Cream</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'Chocolate.jpg' %}" class="card-img-top" height="220" style="object-fit:cover" alt="Chocolate">
+          <div class="card-body text-center">
+            <h5 class="card-title">Chocolate</h5>
+            <p class="card-text">Rich and indulgent chocolate ice cream made from premium cocoa.</p>
+            <p class="fw-bold text-primary">₹80 / scoop</p>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Chocolate">
+              <button type="submit" class="btn btn-primary"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'strawberry.jpg' %}" class="card-img-top" height="220" style="object-fit:cover" alt="Strawberry">
+          <div class="card-body text-center">
+            <h5 class="card-title">Strawberry</h5>
+            <p class="card-text">Sweet and tart strawberry made with real fruit for a refreshing taste.</p>
+            <p class="fw-bold text-primary">₹90 / scoop</p>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Strawberry">
+              <button type="submit" class="btn btn-danger"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'butterscoth.jpg' %}" class="card-img-top" height="220" style="object-fit:cover" alt="Butterscotch">
+          <div class="card-body text-center">
+            <h5 class="card-title">Butterscotch</h5>
+            <p class="card-text">Creamy butterscotch with rich caramelized butter and brown sugar.</p>
+            <p class="fw-bold text-primary">₹85 / scoop</p>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Butterscotch">
+              <button type="submit" class="btn btn-warning"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Softy Section -->
+<section id="softy" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4"><i class="bi bi-cup-straw"></i> Softy</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-cup-straw fs-1 text-info"></i>
+            <h5 class="card-title mt-3">Vanilla Softy</h5>
+            <p class="card-text">Classic smooth vanilla softy cone — light, creamy, and refreshing.</p>
+            <p class="fw-bold text-primary">₹40 / cone</p>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Vanilla Softy">
+              <button type="submit" class="btn btn-info text-white"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-cup-straw fs-1 text-danger"></i>
+            <h5 class="card-title mt-3">Strawberry Softy</h5>
+            <p class="card-text">Fruity strawberry softy with a vibrant pink swirl — a summer favourite.</p>
+            <p class="fw-bold text-primary">₹45 / cone</p>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Strawberry Softy">
+              <button type="submit" class="btn btn-danger"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-cup-straw fs-1 text-dark"></i>
+            <h5 class="card-title mt-3">Chocolate Softy</h5>
+            <p class="card-text">Rich chocolate softy swirl — for those who can never get enough chocolate.</p>
+            <p class="fw-bold text-primary">₹45 / cone</p>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Chocolate Softy">
+              <button type="submit" class="btn btn-dark"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Family Pack Section -->
+<section id="familypack" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4"><i class="bi bi-box-seam"></i> Family Packs</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-primary">
+          <div class="card-body text-center">
+            <span class="badge bg-primary mb-2">Popular</span>
+            <h5 class="card-title">Classic Pack</h5>
+            <p class="card-text">500ml pack with your choice of any 2 flavors. Perfect for a small family treat.</p>
+            <h4 class="text-primary">₹250</h4>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Classic Family Pack">
+              <button type="submit" class="btn btn-primary mt-2"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-success">
+          <div class="card-body text-center">
+            <span class="badge bg-success mb-2">Best Value</span>
+            <h5 class="card-title">Super Pack</h5>
+            <p class="card-text">1L pack with your choice of any 3 flavors. Great for parties and gatherings.</p>
+            <h4 class="text-success">₹450</h4>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Super Family Pack">
+              <button type="submit" class="btn btn-success mt-2"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-warning">
+          <div class="card-body text-center">
+            <span class="badge bg-warning text-dark mb-2">Premium</span>
+            <h5 class="card-title">Mega Pack</h5>
+            <p class="card-text">2L pack with all flavors included. The ultimate ice cream experience for the whole family!</p>
+            <h4 class="text-warning">₹800</h4>
+            <form method="post" action="{% url 'order' %}">
+              {% csrf_token %}
+              <input type="hidden" name="flavor" value="Mega Family Pack">
+              <button type="submit" class="btn btn-warning mt-2"><i class="bi bi-cart-plus"></i> Order Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-dark text-white text-center py-5">
+  <div class="container">
+    <h2>Can't Decide? Visit Our Store!</h2>
+    <p class="lead">Come taste all our flavors and find your favourite. We're open 7 days a week!</p>
+    <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg"><i class="bi bi-geo-alt"></i> Find Us</a>
+  </div>
+</section>
+{% endblock body %}

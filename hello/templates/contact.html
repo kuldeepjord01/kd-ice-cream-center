@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - KD Ice Cream{% endblock title %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="bg-primary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Get in Touch</h1>
+    <p class="lead">We'd love to hear from you! Fill out the form below or reach us directly.</p>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Form -->
+      <div class="col-md-7">
+        <h2>Send Us a Message</h2>
+        <form method="post" action="{% url 'contact' %}" id="contactForm">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" id="phone" name="number" placeholder="Enter your phone number" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">
+            <i class="bi bi-send"></i> Submit
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-5">
+        <h2>Contact Information</h2>
+        <div class="card shadow-sm mb-3">
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-3">
+                <i class="bi bi-geo-alt-fill text-primary fs-5"></i>
+                <strong> Address:</strong><br>
+                <span class="ms-4">123 Business Street, Hyderabad, India</span>
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-telephone-fill text-primary fs-5"></i>
+                <strong> Phone:</strong><br>
+                <span class="ms-4">+91 98765 43210</span>
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-envelope-fill text-primary fs-5"></i>
+                <strong> Email:</strong><br>
+                <span class="ms-4">contact@kdicecream.com</span>
+              </li>
+              <li>
+                <i class="bi bi-clock-fill text-primary fs-5"></i>
+                <strong> Hours:</strong><br>
+                <span class="ms-4">Mon - Sun: 10:00 AM - 10:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Follow Us</h4>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-outline-primary"><i class="bi bi-facebook"></i> Facebook</a>
+          <a href="#" class="btn btn-outline-info"><i class="bi bi-twitter"></i> Twitter</a>
+          <a href="#" class="btn btn-outline-danger"><i class="bi bi-instagram"></i> Instagram</a>
+        </div>
+
+        <!-- Map Embed -->
+        <div class="mt-4">
+          <h4>Find Us</h4>
+          <div class="ratio ratio-4x3">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=78.40%2C17.38%2C78.52%2C17.44&layer=mapnik" style="border:1px solid #ccc; border-radius: 8px;" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}
