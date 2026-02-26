@@ -139,3 +139,8 @@ MESSAGE_TAGS = {
     message_constants.WARNING: 'warning',
     message_constants.ERROR: 'danger',
 }
+
+# Authentication
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
